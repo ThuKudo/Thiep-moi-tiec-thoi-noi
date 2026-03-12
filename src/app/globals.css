@@ -1,8 +1,8 @@
 @import "@fontsource/be-vietnam-pro/400.css";
 @import "@fontsource/be-vietnam-pro/600.css";
 @import "@fontsource/be-vietnam-pro/700.css";
-@import "@fontsource/cormorant-garamond/500.css";
-@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/lora/500.css";
+@import "@fontsource/lora/700.css";
 @import "tailwindcss";
 
 :root {
@@ -23,7 +23,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: "Be Vietnam Pro", "Segoe UI", sans-serif;
-  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-heading: "Lora", Georgia, serif;
 }
 
 * {
