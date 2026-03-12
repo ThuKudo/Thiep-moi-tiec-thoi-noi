@@ -114,7 +114,7 @@ export function InvitationCard({ config, guestName }: InvitationCardProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#d1a46d]">
             Trân trọng kính mời
           </p>
-          <p className="mt-3 font-heading text-3xl text-[#744d5c] sm:text-4xl">
+          <p className="mx-auto mt-3 max-w-[16ch] text-balance break-words font-heading text-[clamp(2.2rem,5vw,3.2rem)] leading-[1.2] text-[#744d5c] sm:max-w-[18ch]">
             {resolvedGuestName}
           </p>
         </div>
