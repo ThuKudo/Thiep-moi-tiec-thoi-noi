@@ -98,11 +98,13 @@ export function InvitationExperience({
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.38em] text-[#c08b90]">
             Thiệp thôi nôi online
           </p>
-          <h1 className="font-heading text-4xl leading-tight text-[#7b5261] sm:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-[clamp(2.8rem,6vw,4.8rem)] leading-[1.03] tracking-[-0.03em] text-[#7b5261]">
             Thiệp mời nhẹ nhàng, sang trọng cho{" "}
-            <span className="text-[#d98f67]">{config.babyName}</span>
+            <span className="font-display italic text-[#d98f67]">
+              {config.babyName}
+            </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#8e6d79] sm:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#8e6d79] sm:text-lg">
             Tùy chỉnh tên khách mời, xem trước theo thời gian thực, sao chép
             link cá nhân hóa và xuất PNG rõ nét để gửi ngay.
           </p>
@@ -116,10 +118,10 @@ export function InvitationExperience({
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#bf8a90]">
                 Hành động nhanh
               </p>
-              <h2 className="mt-2 font-heading text-2xl text-[#7b5565]">
+              <h2 className="font-heading mt-2 text-[2rem] leading-none text-[#7b5565]">
                 Chia sẻ thiệp
               </h2>
-              <p className="mt-3 text-sm leading-6 text-[#9a7b88]">
+              <p className="mt-4 text-sm leading-7 text-[#9a7b88]">
                 Link mời sẽ luôn chứa tên hiện tại của khách mời để mở ra là
                 hiển thị sẵn.
               </p>
@@ -133,7 +135,7 @@ export function InvitationExperience({
                 />
               </div>
 
-              <div className="mt-5 rounded-[1.4rem] border border-white/70 bg-white/70 p-4 text-sm leading-6 text-[#8f707d]">
+              <div className="mt-5 rounded-[1.5rem] border border-white/70 bg-white/70 p-4 text-sm leading-7 text-[#8f707d]">
                 <p className="font-semibold text-[#785260]">Link xem trước</p>
                 <p className="mt-2 break-all">
                   {invitationLink ||
@@ -155,13 +157,13 @@ export function InvitationExperience({
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#bf8a90]">
                     Preview thiệp
                   </p>
-                  <h2 className="font-heading text-2xl text-[#7b5565]">
+                  <h2 className="font-heading text-[2rem] leading-none text-[#7b5565]">
                     Cập nhật theo thời gian thực
                   </h2>
                 </div>
                 <div className="rounded-full border border-white/70 bg-white/70 px-3 py-2 text-sm text-[#8d6773]">
                   Khách mời:{" "}
-                  <span className="font-bold text-[#734d5c]">
+                  <span className="font-semibold text-[#734d5c]">
                     {resolveGuestName(deferredGuestName)}
                   </span>
                 </div>
@@ -182,7 +184,7 @@ export function InvitationExperience({
         position="top-center"
         richColors
         toastOptions={{
-          className: "!border-white/70 !bg-white/85 !text-[#6b4a58]",
+          className: "!border-white/70 !bg-white/90 !text-[#6b4a58]",
         }}
       />
     </main>

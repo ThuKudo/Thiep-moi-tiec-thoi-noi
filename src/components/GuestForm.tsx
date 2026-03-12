@@ -16,7 +16,7 @@ export function GuestForm({ guestName, onGuestNameChange }: GuestFormProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#bf8a90]">
             Cá nhân hóa thiệp
           </p>
-          <h2 className="font-heading text-2xl text-[#7b5565]">
+          <h2 className="font-heading text-[2rem] leading-none text-[#7b5565]">
             Tên khách mời
           </h2>
         </div>
@@ -31,17 +31,17 @@ export function GuestForm({ guestName, onGuestNameChange }: GuestFormProps) {
       <input
         id="guest-name"
         type="text"
-        placeholder="Ví dụ: Nguyễn Văn A"
+        placeholder="Ví dụ: Nguyễn Thị Ngọc Ánh"
         value={guestName}
         onChange={(event) => onGuestNameChange(event.target.value)}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="words"
         spellCheck={false}
-        className="w-full rounded-2xl border border-white/70 bg-white/80 px-4 py-3 text-base text-[#704d5b] outline-none transition duration-200 placeholder:text-[#c4a1ac] focus:border-[#f3d2b7] focus:ring-4 focus:ring-[#fde5cc]/70"
+        className="w-full rounded-[1.55rem] border border-[#eed6c1] bg-white/82 px-4 py-3.5 text-[1.05rem] font-medium text-[#704d5b] outline-none transition duration-200 placeholder:text-[#c4a1ac] focus:border-[#efceb0] focus:ring-4 focus:ring-[#fde5cc]/70"
       />
 
-      <p className="mt-3 text-sm leading-6 text-[#9a7b88]">
+      <p className="mt-3 text-sm leading-7 text-[#9a7b88]">
         Nếu để trống, thiệp sẽ dùng tên mặc định là{" "}
         <span className="font-semibold text-[#7b5565]">Quý Khách</span>.
       </p>
