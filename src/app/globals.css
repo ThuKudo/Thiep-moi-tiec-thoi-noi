@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fffaf5;
+  --foreground: #5f4856;
+  --card: rgba(255, 251, 247, 0.72);
+  --muted: #8f7280;
+  --line: rgba(199, 153, 134, 0.2);
+  --rose: #f6cbd4;
+  --pearl: #fff9f5;
+  --cream: #fde9d4;
+  --gold: #f4d998;
+  --sun: #ffd479;
+  --shadow: 0 30px 80px rgba(185, 130, 138, 0.18);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Trebuchet MS", "Segoe UI", "Gill Sans", sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--foreground);
+  font-family: "Trebuchet MS", "Segoe UI", "Gill Sans", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 211, 124, 0.45), transparent 28%),
+    radial-gradient(circle at top right, rgba(246, 203, 212, 0.55), transparent 30%),
+    linear-gradient(180deg, #fffdf9 0%, #fff7f1 45%, #fffaf5 100%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(246, 203, 212, 0.45);
+}
+
+.page-shell {
+  position: relative;
+  overflow: clip;
+}
+
+.page-shell::before,
+.page-shell::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  border-radius: 999px;
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.page-shell::before {
+  top: 10%;
+  left: -5rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(255, 214, 143, 0.18);
+}
+
+.page-shell::after {
+  right: -6rem;
+  bottom: 8%;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(246, 203, 212, 0.2);
+}
+
+.glass-panel {
+  background: rgba(255, 252, 248, 0.64);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.ornament-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.25;
+}
+
+.float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float-slow 9.5s ease-in-out infinite 1.4s;
+}
+
+.sparkle {
+  animation: sparkle 3.8s ease-in-out infinite;
+}
+
+.fade-rise {
+  animation: fade-rise 0.9s ease-out both;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: -120% auto auto -30%;
+  width: 40%;
+  height: 300%;
+  transform: rotate(22deg);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.44),
+    transparent
+  );
+  animation: shine 7s linear infinite;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(196, 156, 164, 0.4);
+  border-radius: 999px;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-20%) rotate(22deg);
+  }
+  100% {
+    transform: translateX(380%) rotate(22deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-shell::before,
+  .page-shell::after {
+    filter: blur(30px);
+  }
+}
