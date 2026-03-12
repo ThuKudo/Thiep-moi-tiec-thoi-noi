@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fontsource/be-vietnam-pro": "^5.2.8",
+    "@fontsource/noto-serif": "^5.2.9",
     "html-to-image": "^1.11.13",
     "next": "16.1.6",
     "react": "19.2.3",
