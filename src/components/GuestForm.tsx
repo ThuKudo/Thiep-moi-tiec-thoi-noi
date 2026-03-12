@@ -22,7 +22,10 @@ export function GuestForm({ guestName, onGuestNameChange }: GuestFormProps) {
         </div>
       </div>
 
-      <label className="mb-3 block text-sm font-semibold text-[#8c6c78]" htmlFor="guest-name">
+      <label
+        className="mb-3 block text-sm font-semibold text-[#8c6c78]"
+        htmlFor="guest-name"
+      >
         Nhập tên để lời mời cập nhật ngay trên thiệp
       </label>
       <input
@@ -31,6 +34,10 @@ export function GuestForm({ guestName, onGuestNameChange }: GuestFormProps) {
         placeholder="Ví dụ: Nguyễn Văn A"
         value={guestName}
         onChange={(event) => onGuestNameChange(event.target.value)}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="words"
+        spellCheck={false}
         className="w-full rounded-2xl border border-white/70 bg-white/80 px-4 py-3 text-base text-[#704d5b] outline-none transition duration-200 placeholder:text-[#c4a1ac] focus:border-[#f3d2b7] focus:ring-4 focus:ring-[#fde5cc]/70"
       />
 

@@ -1,4 +1,8 @@
-import { fillTemplate, resolveGuestName, type InvitationConfig } from "@/data/invitation";
+import {
+  fillTemplate,
+  resolveGuestName,
+  type InvitationConfig,
+} from "@/data/invitation";
 
 type InvitationCardProps = {
   config: InvitationConfig;
@@ -9,7 +13,14 @@ function SunIcon() {
   return (
     <svg viewBox="0 0 120 120" className="h-full w-full" aria-hidden="true">
       <circle cx="60" cy="60" r="24" fill="#FFD36F" />
-      <circle cx="60" cy="60" r="35" fill="none" stroke="rgba(255, 214, 143, 0.6)" strokeWidth="8" />
+      <circle
+        cx="60"
+        cy="60"
+        r="35"
+        fill="none"
+        stroke="rgba(255, 214, 143, 0.6)"
+        strokeWidth="8"
+      />
       {Array.from({ length: 12 }).map((_, index) => {
         const angle = (index * Math.PI) / 6;
         const x1 = 60 + Math.cos(angle) * 42;
@@ -113,7 +124,7 @@ export function InvitationCard({ config, guestName }: InvitationCardProps) {
           <p className="text-balance text-[#8d6a78]">{secondaryMessage}</p>
         </div>
 
-        <div className="my-8 grid gap-4 sm:grid-cols-3">
+        <div className="my-8 grid gap-4 sm:grid-cols-2">
           <div className="rounded-[1.4rem] border border-[#f5dfd3] bg-white/75 p-4 text-center">
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#c49384]">
               Ngày tiệc
@@ -127,19 +138,12 @@ export function InvitationCard({ config, guestName }: InvitationCardProps) {
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#c49384]">
               Địa điểm
             </p>
-            <p className="mt-2 font-semibold text-[#7b5464]">{config.venueLabel}</p>
+            <p className="mt-2 font-semibold text-[#7b5464]">
+              {config.venueLabel}
+            </p>
             <p className="mt-1 text-sm leading-6 text-[#9d7b87]">
               {config.venueAddress}
             </p>
-          </div>
-          <div className="rounded-[1.4rem] border border-[#f5dfd3] bg-white/75 p-4 text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#c49384]">
-              RSVP
-            </p>
-            <p className="mt-2 font-heading text-2xl text-[#7b5464]">
-              {config.rsvpPhone}
-            </p>
-            <p className="mt-1 text-sm text-[#9d7b87]">{config.hostLine}</p>
           </div>
         </div>
 

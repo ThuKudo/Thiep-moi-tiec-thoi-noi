@@ -1,7 +1,7 @@
 "use client";
 
 import { toPng } from "html-to-image";
-import { useEffect, useMemo, useRef, useState, useTransition } from "react";
+import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { Toaster, toast } from "sonner";
 import { ActionButtons } from "@/components/ActionButtons";
 import { GuestForm } from "@/components/GuestForm";
@@ -19,8 +19,8 @@ export function InvitationExperience({
 }: InvitationExperienceProps) {
   const [guestName, setGuestName] = useState(initialGuest);
   const [isExporting, setIsExporting] = useState(false);
-  const [isPending, startTransition] = useTransition();
   const previewRef = useRef<HTMLDivElement>(null);
+  const deferredGuestName = useDeferredValue(guestName);
 
   useEffect(() => {
     setGuestName(initialGuest);
@@ -63,7 +63,9 @@ export function InvitationExperience({
     try {
       await document.fonts.ready;
       const exportWidth = 1520;
-      const exportHeight = Math.round((node.scrollHeight / node.scrollWidth) * exportWidth);
+      const exportHeight = Math.round(
+        (node.scrollHeight / node.scrollWidth) * exportWidth,
+      );
       const dataUrl = await toPng(node, {
         cacheBust: true,
         pixelRatio: 2.5,
@@ -97,21 +99,18 @@ export function InvitationExperience({
             Thiệp thôi nôi online
           </p>
           <h1 className="font-heading text-4xl leading-tight text-[#7b5261] sm:text-5xl lg:text-6xl">
-            Thiệp mời nhẹ nhàng, sang trọng cho <span className="text-[#d98f67]">{config.babyName}</span>
+            Thiệp mời nhẹ nhàng, sang trọng cho{" "}
+            <span className="text-[#d98f67]">{config.babyName}</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-[#8e6d79] sm:text-lg">
-            Tùy chỉnh tên khách mời, xem trước theo thời gian thực, sao chép link cá nhân hóa và xuất PNG rõ nét để gửi ngay.
+            Tùy chỉnh tên khách mời, xem trước theo thời gian thực, sao chép
+            link cá nhân hóa và xuất PNG rõ nét để gửi ngay.
           </p>
         </section>
 
         <section className="grid gap-6 lg:grid-cols-[380px_minmax(0,1fr)] lg:items-start">
           <div className="space-y-5 lg:sticky lg:top-6">
-            <GuestForm
-              guestName={guestName}
-              onGuestNameChange={(value) =>
-                startTransition(() => setGuestName(value))
-              }
-            />
+            <GuestForm guestName={guestName} onGuestNameChange={setGuestName} />
 
             <section className="glass-panel fade-rise rounded-[2rem] p-6 sm:p-7">
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#bf8a90]">
@@ -121,7 +120,8 @@ export function InvitationExperience({
                 Chia sẻ thiệp
               </h2>
               <p className="mt-3 text-sm leading-6 text-[#9a7b88]">
-                Link mời sẽ luôn chứa tên hiện tại của khách mời để mở ra là hiển thị sẵn.
+                Link mời sẽ luôn chứa tên hiện tại của khách mời để mở ra là
+                hiển thị sẵn.
               </p>
 
               <div className="mt-5">
@@ -136,10 +136,13 @@ export function InvitationExperience({
               <div className="mt-5 rounded-[1.4rem] border border-white/70 bg-white/70 p-4 text-sm leading-6 text-[#8f707d]">
                 <p className="font-semibold text-[#785260]">Link xem trước</p>
                 <p className="mt-2 break-all">
-                  {invitationLink || `/?guest=${encodeURIComponent(resolveGuestName(guestName))}`}
+                  {invitationLink ||
+                    `/?guest=${encodeURIComponent(resolveGuestName(guestName))}`}
                 </p>
                 <p className="mt-3 text-xs uppercase tracking-[0.22em] text-[#c59b86]">
-                  {isPending ? "Đang cập nhật preview..." : "Preview đã sẵn sàng"}
+                  {deferredGuestName !== guestName
+                    ? "Đang cập nhật preview..."
+                    : "Preview đã sẵn sàng"}
                 </p>
               </div>
             </section>
@@ -159,13 +162,16 @@ export function InvitationExperience({
                 <div className="rounded-full border border-white/70 bg-white/70 px-3 py-2 text-sm text-[#8d6773]">
                   Khách mời:{" "}
                   <span className="font-bold text-[#734d5c]">
-                    {resolveGuestName(guestName)}
+                    {resolveGuestName(deferredGuestName)}
                   </span>
                 </div>
               </div>
 
               <div ref={previewRef}>
-                <InvitationCard config={config} guestName={guestName} />
+                <InvitationCard
+                  config={config}
+                  guestName={deferredGuestName}
+                />
               </div>
             </div>
           </section>

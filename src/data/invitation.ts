@@ -5,7 +5,6 @@ export type InvitationConfig = {
   eventTime: string;
   venueLabel: string;
   venueAddress: string;
-  rsvpPhone: string;
   hostLine: string;
   primaryMessage: string;
   secondaryMessage: string;
@@ -21,7 +20,6 @@ export const invitationConfig: InvitationConfig = {
   venueLabel: "Tư gia gia đình",
   venueAddress:
     "25/5 Đường Nguyễn Văn Tuôi, Ấp Bến Lức 6, xã Bến Lức, Tây Ninh",
-  rsvpPhone: "0988 888 888",
   hostLine: "Ba Mẹ Bé Ánh Dương",
   primaryMessage:
     "Ba Mẹ bé thân mời {guest} đến chung vui trong buổi tiệc thôi nôi của Bé Ánh Dương.",
