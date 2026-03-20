@@ -16,7 +16,7 @@ export const invitationConfig: InvitationConfig = {
   eventTitle: "Thiệp Mời Thôi Nôi",
   babyName: "Bé Ánh Dương",
   eventDate: "29/03/2026",
-  eventTime: "10:30 - 14:30",
+  eventTime: "10:30",
   venueLabel: "Tư gia gia đình",
   venueAddress:
     "25/5 Đường Nguyễn Văn Tuôi, Ấp Bến Lức 6, xã Bến Lức, Tây Ninh",

@@ -30,10 +30,9 @@ Bạn có thể sửa nhanh các trường:
 
 - `babyName`
 - `eventDate`
-- `eventTime`
+- `eventTime` (giờ bắt đầu)
 - `venueLabel`
 - `venueAddress`
-- `rsvpPhone`
 - `primaryMessage`
 - `secondaryMessage`
 - `note`
