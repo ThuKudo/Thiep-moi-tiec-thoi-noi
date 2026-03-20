@@ -101,8 +101,9 @@ export function InvitationCard({ config, guestName }: InvitationCardProps) {
           <p className="mb-4 text-[0.72rem] font-semibold uppercase tracking-[0.48em] text-[#c38d96] sm:text-xs">
             Lời mời thân thương
           </p>
-          <h1 className="font-heading text-[clamp(3rem,7vw,4.5rem)] leading-[0.98] font-semibold tracking-[-0.03em] text-[#805564]">
-            {config.eventTitle}
+          <h1 className="font-heading text-[clamp(3rem,7vw,4.5rem)] leading-[0.95] font-semibold tracking-[-0.03em] text-[#805564]">
+            <span className="block">{config.eventTitleLineOne}</span>
+            <span className="block">{config.eventTitleLineTwo}</span>
           </h1>
           <div className="mx-auto my-5 h-px w-32 bg-[linear-gradient(90deg,transparent,#efd399,transparent)]" />
           <p className="font-display text-[clamp(2.6rem,5vw,3.6rem)] font-semibold italic leading-none tracking-[-0.02em] text-[#d68a60]">

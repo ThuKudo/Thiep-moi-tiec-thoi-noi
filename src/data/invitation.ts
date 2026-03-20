@@ -1,5 +1,7 @@
 export type InvitationConfig = {
   eventTitle: string;
+  eventTitleLineOne: string;
+  eventTitleLineTwo: string;
   babyName: string;
   eventDate: string;
   eventTime: string;
@@ -13,7 +15,9 @@ export type InvitationConfig = {
 };
 
 export const invitationConfig: InvitationConfig = {
-  eventTitle: "Thiệp Mời Thôi Nôi",
+  eventTitle: "Thiệp Mời Tiệc Thôi Nôi",
+  eventTitleLineOne: "Thiệp Mời",
+  eventTitleLineTwo: "Tiệc Thôi Nôi",
   babyName: "Bé Ánh Dương",
   eventDate: "29/03/2026",
   eventTime: "10:30",
