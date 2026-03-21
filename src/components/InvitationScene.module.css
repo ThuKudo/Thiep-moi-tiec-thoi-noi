@@ -299,14 +299,14 @@
 
 .babyNameRight {
   position: absolute;
-  top: 271px;
+  top: 265px;
   left: 56px;
   right: 74px;
   margin: 0;
   text-align: center;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 56px;
+  font-size: 55px;
   line-height: 1;
   letter-spacing: -0.035em;
   color: #ef5a8a;
@@ -314,12 +314,12 @@
 
 .timeLabel {
   position: absolute;
-  left: 82px;
-  top: 343px;
+  left: 84px;
+  top: 352px;
   margin: 0;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 27px;
+  font-size: 26px;
   line-height: 1;
   font-weight: 700;
   color: #ef5a8a;
@@ -330,22 +330,22 @@
 
 .timeDecor {
   position: absolute;
-  left: 84px;
-  top: 383px;
+  left: 87px;
+  top: 390px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 }
 
 .timeDot {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   background: #ef5a8a;
   display: grid;
   place-items: center;
   font-family: "Noto Serif", Georgia, serif;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1;
   font-weight: 700;
   color: #fff7fb;
@@ -360,12 +360,12 @@
 
 .dateBox {
   position: absolute;
-  right: 44px;
-  top: 334px;
-  width: 122px;
+  right: 48px;
+  top: 345px;
+  width: 116px;
   border: 2px solid #ef5a8a;
   border-radius: 14px;
-  padding: 10px 8px 8px;
+  padding: 9px 8px 8px;
   text-align: center;
   background: rgba(255, 255, 255, 0.46);
 }
@@ -374,16 +374,16 @@
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
   color: #ef5a8a;
 }
 
 .lunarText {
   position: absolute;
-  top: 446px;
+  top: 456px;
   left: 64px;
   right: 64px;
   margin: 0;
@@ -391,20 +391,20 @@
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
   font-size: 14px;
-  line-height: 1.45;
+  line-height: 1.5;
   color: #ef6f98;
 }
 
 .venueText {
   position: absolute;
   left: 58px;
-  top: 478px;
+  top: 496px;
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
   font-style: italic;
   font-size: 22px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 800;
   color: #ef5a8a;
 }
 
@@ -412,10 +412,11 @@
   position: absolute;
   left: 58px;
   right: 116px;
-  top: 513px;
+  top: 531px;
   margin: 0;
   font-size: 13px;
-  line-height: 1.28;
+  line-height: 1.42;
+  font-weight: 600;
   color: #ef5a8a;
 }
 
@@ -423,10 +424,11 @@
   position: absolute;
   left: 58px;
   right: 116px;
-  top: 536px;
+  top: 552px;
   margin: 0;
   font-size: 13px;
-  line-height: 1.28;
+  line-height: 1.42;
+  font-weight: 600;
   color: #ef5a8a;
 }
 
@@ -434,18 +436,19 @@
   position: absolute;
   left: 78px;
   right: 104px;
-  bottom: 22px;
+  top: 571px;
   margin: 0;
   text-align: center;
   font-size: 14px;
   line-height: 1.28;
+  font-weight: 600;
   color: #ef5a8a;
 }
 
 .cupcakeWrap {
   position: absolute;
-  right: 34px;
-  bottom: 24px;
+  right: 28px;
+  bottom: 18px;
   width: 48px;
   height: 64px;
 }

@@ -15,7 +15,7 @@ export function ExportButton({ onClick, isExporting }: ExportButtonProps) {
       disabled={isExporting}
       className={styles.controlButton}
     >
-      {isExporting ? "Đang xuất..." : "Tải PNG"}
+      {isExporting ? "Đang xuất ảnh..." : "Lưu ảnh thiệp"}
     </button>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { toPng } from "html-to-image";
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Toaster, toast } from "sonner";
 import { ExportButton } from "@/components/ExportButton";
 import { InvitationEditor } from "@/components/InvitationEditor";
@@ -27,19 +27,6 @@ export function InvitationExperience({
     guestName: initialGuest || config.content.guestName,
   }));
 
-  const exportFileName = useMemo(() => {
-    const suffix = content.guestName.trim()
-      ? `-${content.guestName
-          .trim()
-          .toLowerCase()
-          .replace(/\s+/g, "-")
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")}`
-      : "";
-
-    return `thiep-thoi-noi-anh-duong${suffix}.png`;
-  }, [content.guestName]);
-
   const handleExport = async () => {
     const node = exportRef.current;
     if (!node) {
@@ -52,23 +39,25 @@ export function InvitationExperience({
       await document.fonts.ready;
       const dataUrl = await toPng(node, {
         cacheBust: true,
-        pixelRatio: 2.4,
-        canvasWidth: SCENE_WIDTH * 2.4,
-        canvasHeight: SCENE_HEIGHT * 2.4,
+        pixelRatio: 3,
+        backgroundColor: "#e9e9e9",
+        canvasWidth: SCENE_WIDTH * 3,
+        canvasHeight: SCENE_HEIGHT * 3,
         style: {
           width: `${SCENE_WIDTH}px`,
           height: `${SCENE_HEIGHT}px`,
           margin: "0",
+          background: "#e9e9e9",
         },
       });
 
       const link = document.createElement("a");
-      link.download = exportFileName;
+      link.download = "thiep-anh-duong.png";
       link.href = dataUrl;
       link.click();
-      toast.success("Đã xuất PNG.");
+      toast.success("Đã lưu ảnh thiệp.");
     } catch {
-      toast.error("Xuất PNG thất bại.");
+      toast.error("Xuất ảnh thất bại, hãy thử lại.");
     } finally {
       setIsExporting(false);
     }
