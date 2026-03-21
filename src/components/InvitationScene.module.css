@@ -1,0 +1,412 @@
+.viewport {
+  min-height: 100vh;
+  background: #e9e9e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.controls {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 30;
+  display: flex;
+  gap: 8px;
+}
+
+.controlButton {
+  border: 1px solid rgba(80, 80, 80, 0.45);
+  background: rgba(255, 255, 255, 0.92);
+  color: #303030;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.controlButton:hover {
+  background: #ffffff;
+}
+
+.controlButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.stage {
+  width: 1323px;
+  height: 663px;
+  position: relative;
+  transform-origin: top left;
+  background: #e9e9e9;
+}
+
+.scene {
+  position: relative;
+  width: 1323px;
+  height: 663px;
+  background: #e9e9e9;
+}
+
+.referenceOverlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 20;
+  object-fit: cover;
+}
+
+.panelLeft {
+  position: absolute;
+  left: 35px;
+  top: 66px;
+  width: 805px;
+  height: 565px;
+  border: 2px solid #505050;
+  background: #ead9dc;
+  overflow: hidden;
+}
+
+.panelRight {
+  position: absolute;
+  left: 883px;
+  top: 42px;
+  width: 412px;
+  height: 594px;
+  border: 2px solid #505050;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+.balloonWrap {
+  position: absolute;
+  left: 86px;
+  top: 150px;
+  width: 150px;
+  height: 252px;
+}
+
+.oneText {
+  position: absolute;
+  left: 210px;
+  top: 148px;
+  margin: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 178px;
+  line-height: 0.82;
+  letter-spacing: -0.08em;
+  font-weight: 700;
+  color: transparent;
+  background-image:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.9) 0 2.2px, transparent 2.4px),
+    radial-gradient(circle at 55% 40%, rgba(255,245,218,0.86) 0 2.1px, transparent 2.3px),
+    radial-gradient(circle at 75% 25%, rgba(255,210,222,0.84) 0 1.9px, transparent 2.1px),
+    radial-gradient(circle at 38% 78%, rgba(255,255,255,0.75) 0 1.7px, transparent 1.9px),
+    linear-gradient(180deg, #f9dce7 0%, #f59fba 45%, #eb7296 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1.6px rgba(236, 120, 148, 0.82);
+  text-shadow:
+    0 2px 0 rgba(255,255,255,0.5),
+    0 10px 20px rgba(232, 126, 149, 0.14);
+}
+
+.todayText {
+  position: absolute;
+  left: 159px;
+  top: 346px;
+  margin: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 34px;
+  line-height: 1;
+  color: #1b2238;
+}
+
+.babyNameLeft {
+  position: absolute;
+  left: 289px;
+  top: 307px;
+  margin: 0;
+  font-family: "Lora", "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 82px;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #e97894;
+  text-shadow:
+    3px 3px 0 rgba(201, 118, 142, 0.58),
+    0 10px 20px rgba(232, 126, 149, 0.12);
+}
+
+.ageBand {
+  position: absolute;
+  left: 158px;
+  top: 408px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.ageLine {
+  width: 58px;
+  height: 20px;
+  background: #ef6f8f;
+}
+
+.ageText {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ef6f8f;
+}
+
+.inviteRow {
+  position: absolute;
+  left: 94px;
+  right: 92px;
+  bottom: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.inviteLabel {
+  margin: 0;
+  font-family: "Lora", "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 700;
+  color: #c89a4b;
+  text-shadow: 0 2px 6px rgba(200, 154, 75, 0.25);
+}
+
+.inviteDots {
+  flex: 1;
+  height: 0;
+  border-bottom: 4px dotted rgba(200, 154, 75, 0.88);
+  margin-left: 8px;
+  transform: translateY(3px);
+}
+
+.archOuter {
+  position: absolute;
+  left: 35px;
+  top: 37px;
+  width: 339px;
+  height: 540px;
+  border: 2px solid #ef5a8a;
+  border-radius: 170px 170px 44px 44px;
+}
+
+.archInner {
+  position: absolute;
+  left: 44px;
+  top: 46px;
+  width: 321px;
+  height: 522px;
+  border: 2px dashed #ef5a8a;
+  border-radius: 162px 162px 40px 40px;
+}
+
+.bowWrap {
+  position: absolute;
+  left: 151px;
+  top: 11px;
+  width: 110px;
+  height: 74px;
+}
+
+.headline {
+  position: absolute;
+  top: 140px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 20px;
+  line-height: 1;
+  color: #ef5a8a;
+  letter-spacing: 0.01em;
+}
+
+.headlineRule {
+  position: absolute;
+  left: 93px;
+  top: 190px;
+  width: 240px;
+  height: 2px;
+  background: #ef5a8a;
+}
+
+.inviteLineOne {
+  position: absolute;
+  top: 211px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #ef5a8a;
+}
+
+.inviteLineTwo {
+  position: absolute;
+  top: 246px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #ef5a8a;
+}
+
+.babyNameRight {
+  position: absolute;
+  top: 277px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Lora", "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: #ef5a8a;
+}
+
+.timeLabel {
+  position: absolute;
+  left: 86px;
+  top: 335px;
+  margin: 0;
+  font-family: "Lora", "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ef5a8a;
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,0.95),
+    2px 2px 0 rgba(234, 118, 151, 0.35);
+}
+
+.timeDecor {
+  position: absolute;
+  left: 84px;
+  top: 378px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeDot {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: #ef5a8a;
+}
+
+.timeColon {
+  font-size: 48px;
+  line-height: 1;
+  color: #ef5a8a;
+  transform: translateY(-2px);
+}
+
+.dateBox {
+  position: absolute;
+  right: 57px;
+  top: 328px;
+  width: 118px;
+  border: 2px solid #ef5a8a;
+  border-radius: 14px;
+  padding: 12px 8px 10px;
+  text-align: center;
+}
+
+.dateText {
+  margin: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 1.15;
+  color: #ef5a8a;
+}
+
+.lunarText {
+  position: absolute;
+  top: 442px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-family: "Lora", "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ef6f98;
+}
+
+.venueText {
+  position: absolute;
+  left: 58px;
+  top: 475px;
+  margin: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  font-style: italic;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ef5a8a;
+}
+
+.addressLine1 {
+  position: absolute;
+  left: 58px;
+  top: 514px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #ef5a8a;
+}
+
+.addressLine2 {
+  position: absolute;
+  left: 58px;
+  top: 546px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #ef5a8a;
+}
+
+.closingText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 55px;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.3;
+  color: #ef5a8a;
+}
+
+.cupcakeWrap {
+  position: absolute;
+  right: 46px;
+  bottom: 58px;
+  width: 54px;
+  height: 71px;
+}

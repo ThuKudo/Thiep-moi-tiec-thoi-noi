@@ -3,7 +3,7 @@ import "./globals.css";
 import { invitationConfig } from "@/data/invitation";
 
 const pageTitle = `${invitationConfig.eventTitle} | ${invitationConfig.babyName}`;
-const pageDescription = `Thiệp mời tiệc thôi nôi ${invitationConfig.babyName} vào ${invitationConfig.timeHour}:${invitationConfig.timeMinute} ngày ${invitationConfig.solarDate}, chia sẻ nhanh cho khách mời và xuất PNG đẹp mắt.`;
+const pageDescription = `Thiệp mời tiệc thôi nôi ${invitationConfig.babyName}, ngày ${invitationConfig.solarDateLine1}.${invitationConfig.solarDateLine2}, phong cách dựng theo ảnh tham chiếu.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anh-duong-birthday-invitation.vercel.app"),
@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
