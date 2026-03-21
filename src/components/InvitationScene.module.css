@@ -301,14 +301,14 @@
   position: absolute;
   top: 271px;
   left: 56px;
-  right: 56px;
+  right: 74px;
   margin: 0;
   text-align: center;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 58px;
+  font-size: 56px;
   line-height: 1;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
   color: #ef5a8a;
 }
 
@@ -360,7 +360,7 @@
 
 .dateBox {
   position: absolute;
-  right: 53px;
+  right: 44px;
   top: 334px;
   width: 122px;
   border: 2px solid #ef5a8a;
@@ -373,10 +373,11 @@
 .dateText {
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 700;
-  font-size: 19px;
-  line-height: 1.18;
+  font-size: 20px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
   color: #ef5a8a;
 }
 
