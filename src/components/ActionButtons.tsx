@@ -21,7 +21,7 @@ export function ActionButtons({
       <button
         type="button"
         onClick={onPreview}
-        className={`${buttonBase} border border-white/70 bg-white/70 text-[#7a5868] shadow-[0_15px_30px_rgba(226,190,170,0.18)] hover:-translate-y-0.5 hover:bg-white`}
+        className={`${buttonBase} border border-white/75 bg-white/78 text-[#7a5868] shadow-[0_15px_30px_rgba(226,190,170,0.16)] hover:-translate-y-0.5 hover:bg-white`}
       >
         Xem trước
       </button>
@@ -29,7 +29,7 @@ export function ActionButtons({
         type="button"
         onClick={onExport}
         disabled={isExporting}
-        className={`${buttonBase} shine bg-[linear-gradient(135deg,#f6cbd4,#f7deb0)] text-[#6f4555] shadow-[0_18px_35px_rgba(240,191,164,0.34)] hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-75`}
+        className={`${buttonBase} shine bg-[linear-gradient(135deg,#f7d4dc,#f8e5bc)] text-[#6f4555] shadow-[0_18px_35px_rgba(240,191,164,0.28)] hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-75`}
       >
         {isExporting ? "Đang xuất PNG..." : "Xuất PNG"}
       </button>

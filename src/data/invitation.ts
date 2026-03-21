@@ -1,36 +1,51 @@
 export type InvitationConfig = {
   eventTitle: string;
-  eventTitleLineOne: string;
-  eventTitleLineTwo: string;
+  title: string;
   babyName: string;
-  eventDate: string;
-  eventTime: string;
-  venueLabel: string;
-  venueAddress: string;
+  coverOneLabel: string;
+  coverTodayLabel: string;
+  coverBadgeLabel: string;
+  coverInviteLine: string;
+  inviteHeadline: string;
+  inviteGuestLine: string;
+  inviteBody: string;
+  timeLabel: string;
+  timeHour: string;
+  timeMinute: string;
+  weekdayDate: string;
+  solarDate: string;
+  lunarDate: string;
+  venuePrefix: string;
+  venue: string;
+  addressLine1: string;
+  addressLine2: string;
+  closingLine: string;
   hostLine: string;
-  primaryMessage: string;
-  secondaryMessage: string;
-  note: string;
-  closing: string;
 };
 
 export const invitationConfig: InvitationConfig = {
   eventTitle: "Thiệp Mời Tiệc Thôi Nôi",
-  eventTitleLineOne: "Thiệp Mời",
-  eventTitleLineTwo: "Tiệc Thôi Nôi",
-  babyName: "Bé Ánh Dương",
-  eventDate: "29/03/2026",
-  eventTime: "vào lúc 11h",
-  venueLabel: "Tư gia gia đình",
-  venueAddress:
-    "25/5 Đường Nguyễn Văn Tuôi, Ấp Bến Lức 6, xã Bến Lức, Tây Ninh",
+  title: "Tiệc thôi nôi 1 tuổi",
+  babyName: "Ánh Dương",
+  coverOneLabel: "one",
+  coverTodayLabel: "Hôm nay",
+  coverBadgeLabel: "TRÒN 1 TUỔI",
+  coverInviteLine: "Kính mời: {guest}",
+  inviteHeadline: "TRÂN TRỌNG KÍNH MỜI",
+  inviteGuestLine: "Đến dự buổi tiệc mừng thôi nôi",
+  inviteBody: "tròn 1 tuổi của bé",
+  timeLabel: "Vào lúc",
+  timeHour: "11",
+  timeMinute: "00",
+  weekdayDate: "Chủ Nhật",
+  solarDate: "29.03.2026",
+  lunarDate: "Nhằm ngày 11 tháng 02 năm Bính Ngọ",
+  venuePrefix: "Tại",
+  venue: "Tư Gia",
+  addressLine1: "Đc: Hẻm 5 - KP. 6 - TT. Bến Lức",
+  addressLine2: "H. Bến Lức - T. Long An",
+  closingLine: "Rất hân hạnh được đón tiếp!",
   hostLine: "Ba Mẹ Bé Ánh Dương",
-  primaryMessage:
-    "Ba Mẹ bé thân mời {guest} đến chung vui trong buổi tiệc thôi nôi của Bé Ánh Dương.",
-  secondaryMessage:
-    "Sự hiện diện của {guest} là niềm vui và hạnh phúc của gia đình.",
-  note: "Mong được đón tiếp gia đình và người thương trong một buổi tiệc ấm áp, ngọt ngào và đầy tiếng cười.",
-  closing: "Thương mến kính mời",
 };
 
 export const DEFAULT_GUEST_NAME = "Quý Khách";

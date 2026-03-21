@@ -3,7 +3,7 @@ import "./globals.css";
 import { invitationConfig } from "@/data/invitation";
 
 const pageTitle = `${invitationConfig.eventTitle} | ${invitationConfig.babyName}`;
-const pageDescription = `Thiệp mời tiệc thôi nôi ${invitationConfig.babyName} vào ngày ${invitationConfig.eventDate}, chia sẻ nhanh cho khách mời và xuất PNG đẹp mắt.`;
+const pageDescription = `Thiệp mời tiệc thôi nôi ${invitationConfig.babyName} vào ${invitationConfig.timeHour}:${invitationConfig.timeMinute} ngày ${invitationConfig.solarDate}, chia sẻ nhanh cho khách mời và xuất PNG đẹp mắt.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anh-duong-birthday-invitation.vercel.app"),

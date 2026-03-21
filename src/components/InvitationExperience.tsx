@@ -62,17 +62,17 @@ export function InvitationExperience({
 
     try {
       await document.fonts.ready;
-      const exportWidth = 1520;
-      const exportHeight = Math.round(
-        (node.scrollHeight / node.scrollWidth) * exportWidth,
-      );
+      const nodeWidth = node.scrollWidth;
+      const nodeHeight = node.scrollHeight;
+      const exportScale = 2.2;
+
       const dataUrl = await toPng(node, {
         cacheBust: true,
-        pixelRatio: 2.5,
-        canvasWidth: exportWidth,
-        canvasHeight: exportHeight,
+        pixelRatio: exportScale,
+        canvasWidth: nodeWidth * exportScale,
+        canvasHeight: nodeHeight * exportScale,
         style: {
-          width: "760px",
+          width: `${nodeWidth}px`,
           margin: "0",
         },
       });
@@ -94,19 +94,19 @@ export function InvitationExperience({
   return (
     <main className="page-shell custom-scrollbar relative min-h-screen px-4 py-8 sm:px-6 lg:px-10">
       <div className="mx-auto max-w-7xl">
-        <section className="fade-rise mx-auto mb-8 max-w-3xl text-center">
+        <section className="fade-rise mx-auto mb-8 max-w-4xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.38em] text-[#c08b90]">
             Thiệp thôi nôi online
           </p>
-          <h1 className="font-heading text-[clamp(2.8rem,6vw,4.8rem)] leading-[1.03] tracking-[-0.03em] text-[#7b5261]">
-            Thiệp mời nhẹ nhàng, sang trọng cho{" "}
+          <h1 className="font-heading text-[clamp(2.8rem,6vw,5rem)] leading-[1.02] tracking-[-0.035em] text-[#7b5261]">
+            Bộ thiệp hai mặt mềm mại, cao cấp cho{" "}
             <span className="font-display italic text-[#d98f67]">
               {config.babyName}
             </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-[#8e6d79] sm:text-lg">
-            Tùy chỉnh tên khách mời, xem trước theo thời gian thực, sao chép
-            link cá nhân hóa và xuất PNG rõ nét để gửi ngay.
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-[#8e6d79] sm:text-lg">
+            Cá nhân hóa tên khách mời, xem trước theo thời gian thực, sao chép
+            link và xuất PNG sắc nét như một mẫu thiệp in sang trọng.
           </p>
         </section>
 
@@ -152,13 +152,13 @@ export function InvitationExperience({
 
           <section className="fade-rise">
             <div className="glass-panel rounded-[2.4rem] p-3 sm:p-4">
-              <div className="mb-4 flex items-center justify-between gap-3 px-2 pt-2">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3 px-2 pt-2">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#bf8a90]">
                     Preview thiệp
                   </p>
                   <h2 className="font-heading text-[2rem] leading-none text-[#7b5565]">
-                    Cập nhật theo thời gian thực
+                    Bố cục thiệp hai panel
                   </h2>
                 </div>
                 <div className="rounded-full border border-white/70 bg-white/70 px-3 py-2 text-sm text-[#8d6773]">
