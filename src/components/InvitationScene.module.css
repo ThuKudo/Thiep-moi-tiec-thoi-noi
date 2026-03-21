@@ -2,11 +2,20 @@
   min-height: 100vh;
   background: #e9e9e9;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 18px;
+  padding: 18px 18px 26px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+.sceneStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  padding-top: 44px;
 }
 
 .controls {
@@ -42,8 +51,9 @@
   width: 1323px;
   height: 663px;
   position: relative;
-  transform-origin: top left;
+  transform-origin: top center;
   background: #e9e9e9;
+  flex: 0 0 auto;
 }
 
 .scene {
@@ -104,54 +114,54 @@
   font-weight: 700;
   color: transparent;
   background-image:
-    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.9) 0 2.2px, transparent 2.4px),
-    radial-gradient(circle at 55% 40%, rgba(255,245,218,0.86) 0 2.1px, transparent 2.3px),
-    radial-gradient(circle at 75% 25%, rgba(255,210,222,0.84) 0 1.9px, transparent 2.1px),
-    radial-gradient(circle at 38% 78%, rgba(255,255,255,0.75) 0 1.7px, transparent 1.9px),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.9) 0 2.2px, transparent 2.4px),
+    radial-gradient(circle at 55% 40%, rgba(255, 245, 218, 0.86) 0 2.1px, transparent 2.3px),
+    radial-gradient(circle at 75% 25%, rgba(255, 210, 222, 0.84) 0 1.9px, transparent 2.1px),
+    radial-gradient(circle at 38% 78%, rgba(255, 255, 255, 0.75) 0 1.7px, transparent 1.9px),
     linear-gradient(180deg, #f9dce7 0%, #f59fba 45%, #eb7296 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-stroke: 1.6px rgba(236, 120, 148, 0.82);
   text-shadow:
-    0 2px 0 rgba(255,255,255,0.5),
-    0 10px 20px rgba(232, 126, 149, 0.14);
+    0 2px 0 rgba(255, 255, 255, 0.48),
+    0 8px 16px rgba(232, 126, 149, 0.11);
 }
 
 .todayText {
   position: absolute;
-  left: 159px;
-  top: 346px;
+  left: 149px;
+  top: 355px;
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
-  font-size: 34px;
+  font-size: 31px;
   line-height: 1;
   color: #1b2238;
 }
 
 .babyNameLeft {
   position: absolute;
-  left: 289px;
-  top: 307px;
+  left: 296px;
+  top: 315px;
   margin: 0;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
   font-weight: 700;
-  font-size: 82px;
-  line-height: 0.95;
-  letter-spacing: -0.05em;
+  font-size: 80px;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
   color: #e97894;
   text-shadow:
-    3px 3px 0 rgba(201, 118, 142, 0.58),
-    0 10px 20px rgba(232, 126, 149, 0.12);
+    2px 2px 0 rgba(201, 118, 142, 0.4),
+    0 8px 16px rgba(232, 126, 149, 0.08);
 }
 
 .ageBand {
   position: absolute;
   left: 158px;
-  top: 408px;
+  top: 409px;
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 15px;
 }
 
 .ageLine {
@@ -162,10 +172,10 @@
 
 .ageText {
   margin: 0;
-  font-size: 22px;
+  font-size: 21px;
   line-height: 1;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.09em;
   color: #ef6f8f;
 }
 
@@ -173,27 +183,41 @@
   position: absolute;
   left: 94px;
   right: 92px;
-  bottom: 56px;
+  bottom: 60px;
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .inviteLabel {
   margin: 0;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 26px;
+  font-size: 24px;
   line-height: 1;
   font-weight: 700;
   color: #c89a4b;
   text-shadow: 0 2px 6px rgba(200, 154, 75, 0.25);
+  white-space: nowrap;
+}
+
+.inviteValue {
+  margin: 0;
+  min-width: 0;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 24px;
+  line-height: 1;
+  font-style: italic;
+  color: #8b6f3e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .inviteDots {
   flex: 1;
   height: 0;
   border-bottom: 4px dotted rgba(200, 154, 75, 0.88);
-  margin-left: 8px;
   transform: translateY(3px);
 }
 
@@ -227,21 +251,21 @@
 
 .headline {
   position: absolute;
-  top: 140px;
+  top: 138px;
   width: 100%;
   margin: 0;
   text-align: center;
   font-family: "Noto Serif", Georgia, serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1;
   color: #ef5a8a;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
 }
 
 .headlineRule {
   position: absolute;
   left: 93px;
-  top: 190px;
+  top: 188px;
   width: 240px;
   height: 2px;
   background: #ef5a8a;
@@ -249,90 +273,101 @@
 
 .inviteLineOne {
   position: absolute;
-  top: 211px;
-  width: 100%;
+  top: 205px;
+  left: 74px;
+  right: 74px;
   margin: 0;
   text-align: center;
   font-family: "Noto Serif", Georgia, serif;
-  font-size: 18px;
-  line-height: 1.45;
+  font-size: 17px;
+  line-height: 1.52;
   color: #ef5a8a;
 }
 
 .inviteLineTwo {
   position: absolute;
-  top: 246px;
-  width: 100%;
+  top: 239px;
+  left: 74px;
+  right: 74px;
   margin: 0;
   text-align: center;
   font-family: "Noto Serif", Georgia, serif;
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: 17px;
+  line-height: 1.5;
   color: #ef5a8a;
 }
 
 .babyNameRight {
   position: absolute;
-  top: 277px;
-  width: 100%;
+  top: 271px;
+  left: 56px;
+  right: 56px;
   margin: 0;
   text-align: center;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 64px;
+  font-size: 58px;
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.045em;
   color: #ef5a8a;
 }
 
 .timeLabel {
   position: absolute;
-  left: 86px;
-  top: 335px;
+  left: 82px;
+  top: 343px;
   margin: 0;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 32px;
+  font-size: 27px;
   line-height: 1;
   font-weight: 700;
   color: #ef5a8a;
   text-shadow:
-    1px 1px 0 rgba(255,255,255,0.95),
-    2px 2px 0 rgba(234, 118, 151, 0.35);
+    1px 1px 0 rgba(255, 255, 255, 0.95),
+    1px 2px 0 rgba(234, 118, 151, 0.22);
 }
 
 .timeDecor {
   position: absolute;
   left: 84px;
-  top: 378px;
+  top: 383px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .timeDot {
-  width: 46px;
-  height: 46px;
+  width: 44px;
+  height: 44px;
   border-radius: 999px;
   background: #ef5a8a;
+  display: grid;
+  place-items: center;
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff7fb;
 }
 
 .timeColon {
-  font-size: 48px;
+  font-size: 44px;
   line-height: 1;
   color: #ef5a8a;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .dateBox {
   position: absolute;
-  right: 57px;
-  top: 328px;
-  width: 118px;
+  right: 53px;
+  top: 334px;
+  width: 122px;
   border: 2px solid #ef5a8a;
   border-radius: 14px;
-  padding: 12px 8px 10px;
+  padding: 10px 8px 8px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.46);
 }
 
 .dateText {
@@ -340,32 +375,33 @@
   font-family: "Noto Serif", Georgia, serif;
   font-style: italic;
   font-weight: 700;
-  font-size: 21px;
-  line-height: 1.15;
+  font-size: 19px;
+  line-height: 1.18;
   color: #ef5a8a;
 }
 
 .lunarText {
   position: absolute;
-  top: 442px;
-  width: 100%;
+  top: 446px;
+  left: 64px;
+  right: 64px;
   margin: 0;
   text-align: center;
   font-family: "Lora", "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 14px;
+  line-height: 1.45;
   color: #ef6f98;
 }
 
 .venueText {
   position: absolute;
   left: 58px;
-  top: 475px;
+  top: 484px;
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
   font-style: italic;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1;
   font-weight: 700;
   color: #ef5a8a;
@@ -374,39 +410,99 @@
 .addressLine1 {
   position: absolute;
   left: 58px;
-  top: 514px;
+  right: 116px;
+  top: 521px;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: 14px;
+  line-height: 1.34;
   color: #ef5a8a;
 }
 
 .addressLine2 {
   position: absolute;
   left: 58px;
-  top: 546px;
+  right: 116px;
+  top: 549px;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.35;
+  font-size: 14px;
+  line-height: 1.34;
   color: #ef5a8a;
 }
 
 .closingText {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 55px;
+  left: 76px;
+  right: 76px;
+  bottom: 46px;
   margin: 0;
   text-align: center;
-  font-size: 16px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.28;
   color: #ef5a8a;
 }
 
 .cupcakeWrap {
   position: absolute;
-  right: 46px;
-  bottom: 58px;
-  width: 54px;
-  height: 71px;
+  right: 42px;
+  bottom: 46px;
+  width: 48px;
+  height: 64px;
+}
+
+.editorPanel {
+  width: min(1040px, calc(100vw - 36px));
+  border: 1px solid rgba(80, 80, 80, 0.2);
+  background: rgba(255, 255, 255, 0.84);
+  padding: 14px;
+}
+
+.editorGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px 12px;
+}
+
+.editorField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.editorField span {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #6a6670;
+}
+
+.editorField input {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(80, 80, 80, 0.18);
+  background: rgba(255, 255, 255, 0.92);
+  padding: 8px 10px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #303030;
+  outline: none;
+}
+
+.editorField input:focus {
+  border-color: rgba(239, 90, 138, 0.45);
+}
+
+.editorFieldWide {
+  grid-column: span 3;
+}
+
+@media (max-width: 980px) {
+  .editorGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .editorFieldWide {
+    grid-column: span 2;
+  }
 }

@@ -1,4 +1,4 @@
-import { invitationConfig } from "@/data/invitation";
+import { type InvitationContent } from "@/data/invitation";
 import styles from "@/components/InvitationScene.module.css";
 
 function BowIcon() {
@@ -35,7 +35,11 @@ function CupcakeIcon() {
   );
 }
 
-export function RightPanel() {
+type RightPanelProps = {
+  content: InvitationContent;
+};
+
+export function RightPanel({ content }: RightPanelProps) {
   return (
     <section className={styles.panelRight}>
       <div className={styles.archOuter} />
@@ -45,31 +49,31 @@ export function RightPanel() {
         <BowIcon />
       </div>
 
-      <p className={styles.headline}>{invitationConfig.inviteHeadline}</p>
+      <p className={styles.headline}>{content.inviteTitle}</p>
       <div className={styles.headlineRule} />
 
-      <p className={styles.inviteLineOne}>{invitationConfig.inviteLineOne}</p>
-      <p className={styles.inviteLineTwo}>{invitationConfig.inviteLineTwo}</p>
-      <p className={styles.babyNameRight}>{invitationConfig.babyName}</p>
+      <p className={styles.inviteLineOne}>{content.inviteLines[0]}</p>
+      <p className={styles.inviteLineTwo}>{content.inviteLines[1]}</p>
+      <p className={styles.babyNameRight}>{content.childName}</p>
 
-      <p className={styles.timeLabel}>{invitationConfig.timeLabel}</p>
+      <p className={styles.timeLabel}>{content.timeLabel}</p>
       <div className={styles.timeDecor}>
-        <div className={styles.timeDot} />
+        <div className={styles.timeDot}>{content.timeDisplay.hour}</div>
         <div className={styles.timeColon}>:</div>
-        <div className={styles.timeDot} />
+        <div className={styles.timeDot}>{content.timeDisplay.minute}</div>
       </div>
 
       <div className={styles.dateBox}>
-        <p className={styles.dateText}>{invitationConfig.weekday}</p>
-        <p className={styles.dateText}>{invitationConfig.solarDateLine1}</p>
-        <p className={styles.dateText}>{invitationConfig.solarDateLine2}</p>
+        <p className={styles.dateText}>{content.dayBox.weekday}</p>
+        <p className={styles.dateText}>{content.dayBox.date}</p>
+        <p className={styles.dateText}>{content.dayBox.year}</p>
       </div>
 
-      <p className={styles.lunarText}>{invitationConfig.lunarDate}</p>
-      <p className={styles.venueText}>{invitationConfig.venueLabel}</p>
-      <p className={styles.addressLine1}>{invitationConfig.addressLine1}</p>
-      <p className={styles.addressLine2}>{invitationConfig.addressLine2}</p>
-      <p className={styles.closingText}>{invitationConfig.closingLine}</p>
+      <p className={styles.lunarText}>{content.lunarDate}</p>
+      <p className={styles.venueText}>{content.venueTitle}</p>
+      <p className={styles.addressLine1}>{content.addressLines[0]}</p>
+      <p className={styles.addressLine2}>{content.addressLines[1]}</p>
+      <p className={styles.closingText}>{content.footerText}</p>
 
       <div className={styles.cupcakeWrap}>
         <CupcakeIcon />

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { invitationConfig } from "@/data/invitation";
 
-const pageTitle = `${invitationConfig.eventTitle} | ${invitationConfig.babyName}`;
-const pageDescription = `Thiệp mời tiệc thôi nôi ${invitationConfig.babyName}, ngày ${invitationConfig.solarDateLine1}.${invitationConfig.solarDateLine2}, phong cách dựng theo ảnh tham chiếu.`;
+const pageTitle = `${invitationConfig.eventTitle} | ${invitationConfig.content.childName}`;
+const pageDescription = `Thiệp mời tiệc thôi nôi ${invitationConfig.content.childName}, ngày ${invitationConfig.content.dayBox.date}.${invitationConfig.content.dayBox.year}, phong cách dựng theo ảnh tham chiếu.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://anh-duong-birthday-invitation.vercel.app"),

@@ -1,4 +1,4 @@
-import { invitationConfig } from "@/data/invitation";
+import { type InvitationContent } from "@/data/invitation";
 import styles from "@/components/InvitationScene.module.css";
 
 function BalloonIcon() {
@@ -34,26 +34,36 @@ function BalloonIcon() {
   );
 }
 
-export function LeftPanel() {
+type LeftPanelProps = {
+  content: InvitationContent;
+};
+
+export function LeftPanel({ content }: LeftPanelProps) {
+  const guestName = content.guestName.trim();
+
   return (
     <section className={styles.panelLeft}>
       <div className={styles.balloonWrap}>
         <BalloonIcon />
       </div>
 
-      <p className={styles.oneText}>{invitationConfig.leftOneLabel}</p>
-      <p className={styles.todayText}>{invitationConfig.leftTodayLabel}</p>
-      <p className={styles.babyNameLeft}>{invitationConfig.babyName}</p>
+      <p className={styles.oneText}>{content.leftOneLabel}</p>
+      <p className={styles.todayText}>{content.leftTodayLabel}</p>
+      <p className={styles.babyNameLeft}>{content.childName}</p>
 
       <div className={styles.ageBand}>
         <span className={styles.ageLine} />
-        <p className={styles.ageText}>{invitationConfig.leftAgeLabel}</p>
+        <p className={styles.ageText}>{content.occasionText}</p>
         <span className={styles.ageLine} />
       </div>
 
       <div className={styles.inviteRow}>
-        <p className={styles.inviteLabel}>{invitationConfig.leftInviteLabel}</p>
-        <div className={styles.inviteDots} />
+        <p className={styles.inviteLabel}>{content.leftInviteLabel}</p>
+        {guestName ? (
+          <p className={styles.inviteValue}>{guestName}</p>
+        ) : (
+          <div className={styles.inviteDots} />
+        )}
       </div>
     </section>
   );

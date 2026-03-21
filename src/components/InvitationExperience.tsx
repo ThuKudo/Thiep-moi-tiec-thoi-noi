@@ -1,18 +1,14 @@
 "use client";
 
 import { toPng } from "html-to-image";
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Toaster, toast } from "sonner";
 import { ExportButton } from "@/components/ExportButton";
+import { InvitationEditor } from "@/components/InvitationEditor";
 import { InvitationScene } from "@/components/InvitationScene";
 import styles from "@/components/InvitationScene.module.css";
 import { ReferenceOverlayToggle } from "@/components/ReferenceOverlayToggle";
-import {
-  invitationConfig,
-  SCENE_HEIGHT,
-  SCENE_WIDTH,
-  type InvitationConfig,
-} from "@/data/invitation";
+import { SCENE_HEIGHT, SCENE_WIDTH, type InvitationConfig } from "@/data/invitation";
 
 type InvitationExperienceProps = {
   config: InvitationConfig;
@@ -20,12 +16,29 @@ type InvitationExperienceProps = {
 };
 
 export function InvitationExperience({
-  config: _config,
-  initialGuest: _initialGuest,
+  config,
+  initialGuest,
 }: InvitationExperienceProps) {
   const exportRef = useRef<HTMLDivElement>(null);
   const [isExporting, setIsExporting] = useState(false);
   const [overlayVisible, setOverlayVisible] = useState(false);
+  const [content, setContent] = useState(() => ({
+    ...config.content,
+    guestName: initialGuest || config.content.guestName,
+  }));
+
+  const exportFileName = useMemo(() => {
+    const suffix = content.guestName.trim()
+      ? `-${content.guestName
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, "-")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")}`
+      : "";
+
+    return `thiep-thoi-noi-anh-duong${suffix}.png`;
+  }, [content.guestName]);
 
   const handleExport = async () => {
     const node = exportRef.current;
@@ -50,7 +63,7 @@ export function InvitationExperience({
       });
 
       const link = document.createElement("a");
-      link.download = "thiep-thoi-noi-anh-duong.png";
+      link.download = exportFileName;
       link.href = dataUrl;
       link.click();
       toast.success("Đã xuất PNG.");
@@ -67,12 +80,20 @@ export function InvitationExperience({
         <ReferenceOverlayToggle
           enabled={overlayVisible}
           onToggle={() => setOverlayVisible((value) => !value)}
-          disabled={!invitationConfig.referenceOverlaySrc}
+          disabled={!config.referenceOverlaySrc}
         />
         <ExportButton onClick={handleExport} isExporting={isExporting} />
       </div>
 
-      <InvitationScene overlayVisible={overlayVisible} sceneRef={exportRef} />
+      <div className={styles.sceneStack}>
+        <InvitationScene
+          content={content}
+          overlayVisible={overlayVisible}
+          sceneRef={exportRef}
+        />
+
+        <InvitationEditor content={content} onChange={setContent} />
+      </div>
 
       <Toaster
         position="top-center"

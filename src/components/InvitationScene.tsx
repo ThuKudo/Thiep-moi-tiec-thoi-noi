@@ -6,17 +6,20 @@ import styles from "@/components/InvitationScene.module.css";
 import { LeftPanel } from "@/components/LeftPanel";
 import { RightPanel } from "@/components/RightPanel";
 import {
+  type InvitationContent,
   invitationConfig,
   SCENE_HEIGHT,
   SCENE_WIDTH,
 } from "@/data/invitation";
 
 type InvitationSceneProps = {
+  content: InvitationContent;
   overlayVisible: boolean;
   sceneRef?: RefObject<HTMLDivElement | null>;
 };
 
 export function InvitationScene({
+  content,
   overlayVisible,
   sceneRef,
 }: InvitationSceneProps) {
@@ -25,7 +28,7 @@ export function InvitationScene({
   useEffect(() => {
     const updateScale = () => {
       const availableWidth = window.innerWidth - 36;
-      const availableHeight = window.innerHeight - 36;
+      const availableHeight = window.innerHeight - 196;
       const nextScale = Math.min(
         availableWidth / SCENE_WIDTH,
         availableHeight / SCENE_HEIGHT,
@@ -50,8 +53,8 @@ export function InvitationScene({
   return (
     <div className={styles.stage} style={stageStyle}>
       <div ref={sceneRef} className={styles.scene}>
-        <LeftPanel />
-        <RightPanel />
+        <LeftPanel content={content} />
+        <RightPanel content={content} />
       </div>
 
       {overlayVisible && invitationConfig.referenceOverlaySrc ? (
