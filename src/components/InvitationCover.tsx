@@ -43,31 +43,31 @@ export function InvitationCover({ config, guestName }: InvitationCoverProps) {
   const inviteLine = fillTemplate(config.coverInviteLine, resolvedGuestName);
 
   return (
-    <section className="cover-panel relative overflow-hidden rounded-none border border-[#2a2a2a] bg-[#fef1f4] px-7 py-8 sm:px-10 sm:py-10">
+    <section className="cover-panel relative overflow-hidden rounded-none border border-[#2a2a2a] bg-[#fef1f4] px-7 py-8 sm:px-10 sm:py-10 lg:aspect-[1.42/1] lg:px-12 lg:py-9">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.5),transparent_34%)]" />
 
-      <div className="relative flex min-h-[34rem] flex-col justify-between sm:min-h-[38rem]">
+      <div className="relative flex min-h-[34rem] flex-col justify-between sm:min-h-[38rem] lg:min-h-0 lg:h-full">
         <div className="flex-1">
-          <div className="mx-auto flex max-w-[39rem] items-start justify-center gap-2 pt-8 sm:pt-12">
-            <div className="mt-10 h-[14rem] w-[8.8rem] shrink-0 sm:mt-8 sm:h-[15.5rem] sm:w-[9.5rem]">
+          <div className="mx-auto flex max-w-[39rem] items-start justify-center gap-2 pt-8 sm:pt-12 lg:max-w-[40rem] lg:items-center lg:gap-4 lg:pt-3">
+            <div className="mt-10 h-[14rem] w-[8.8rem] shrink-0 sm:mt-8 sm:h-[15.5rem] sm:w-[9.5rem] lg:mt-2 lg:h-[13.8rem] lg:w-[8.7rem]">
               <BalloonIcon />
             </div>
 
             <div className="min-w-0">
-              <div className="glitter-word text-[clamp(5.4rem,14vw,9.6rem)] leading-[0.78] tracking-[-0.08em]">
+              <div className="glitter-word text-[clamp(5.4rem,14vw,9.6rem)] leading-[0.78] tracking-[-0.08em] lg:text-[clamp(5rem,8vw,8.2rem)]">
                 {config.coverOneLabel}
               </div>
 
-              <div className="-mt-1 flex items-end gap-2 sm:gap-3">
-                <p className="pb-2 font-heading text-[clamp(1.7rem,3.8vw,2.8rem)] italic text-[#2f2c35]">
+              <div className="-mt-1 flex items-end gap-2 sm:gap-3 lg:-mt-2">
+                <p className="pb-2 font-heading text-[clamp(1.7rem,3.8vw,2.8rem)] italic text-[#2f2c35] lg:text-[2.1rem]">
                   {config.coverTodayLabel}
                 </p>
-                <p className="cover-baby-name text-[clamp(3.3rem,7.2vw,5.8rem)] leading-[0.88] text-[#ec6f8d]">
+                <p className="cover-baby-name text-[clamp(3.3rem,7.2vw,5.8rem)] leading-[0.88] text-[#ec6f8d] lg:text-[clamp(3.6rem,5.2vw,5rem)]">
                   {config.babyName}
                 </p>
               </div>
 
-              <div className="mt-5 flex items-center justify-center gap-3 sm:mt-6">
+              <div className="mt-5 flex items-center justify-center gap-3 sm:mt-6 lg:mt-4">
                 <span className="h-[0.95rem] w-[3.65rem] bg-[#ef6f8f]" />
                 <p className="text-[clamp(1rem,2vw,1.5rem)] font-bold uppercase tracking-[0.04em] text-[#ef6f8f]">
                   {config.coverBadgeLabel}
@@ -78,8 +78,8 @@ export function InvitationCover({ config, guestName }: InvitationCoverProps) {
           </div>
         </div>
 
-        <div className="mx-auto mt-8 w-full max-w-[42rem] pt-5">
-          <p className="font-display text-[clamp(1.3rem,3vw,2.2rem)] italic leading-none text-[#b38a53] drop-shadow-[0_2px_5px_rgba(219,185,126,0.24)]">
+        <div className="mx-auto mt-8 w-full max-w-[42rem] pt-5 lg:mt-5 lg:max-w-[40rem] lg:pt-0">
+          <p className="font-display text-[clamp(1.3rem,3vw,2.2rem)] italic leading-none text-[#b38a53] drop-shadow-[0_2px_5px_rgba(219,185,126,0.24)] lg:text-[1.85rem]">
             {inviteLine}
           </p>
           <div className="mt-3 h-px bg-[repeating-linear-gradient(90deg,rgba(213,174,105,0.72)_0_3px,transparent_3px_7px)]" />

@@ -10,7 +10,7 @@ type InvitationCardProps = {
 export function InvitationCard({ config, guestName }: InvitationCardProps) {
   return (
     <article className="invitation-card-shell mx-auto w-full max-w-[1240px]">
-      <div className="grid gap-6 lg:grid-cols-[1.55fr_0.8fr] lg:gap-9">
+      <div className="grid gap-6 lg:items-start lg:grid-cols-[1.55fr_0.8fr] lg:gap-9">
         <InvitationCover config={config} guestName={guestName} />
         <InvitationDetails config={config} />
       </div>
