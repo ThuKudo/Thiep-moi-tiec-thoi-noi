@@ -395,10 +395,18 @@
   color: #ef6f98;
 }
 
-.venueText {
+.bottomSection {
   position: absolute;
   left: 58px;
-  top: 496px;
+  right: 112px;
+  top: 488px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.venueText {
   margin: 0;
   font-family: "Noto Serif", Georgia, serif;
   font-style: italic;
@@ -408,36 +416,31 @@
   color: #ef5a8a;
 }
 
+.addressGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .addressLine1 {
-  position: absolute;
-  left: 58px;
-  right: 116px;
-  top: 531px;
   margin: 0;
   font-size: 13px;
-  line-height: 1.42;
+  line-height: 1.46;
   font-weight: 600;
   color: #ef5a8a;
 }
 
 .addressLine2 {
-  position: absolute;
-  left: 58px;
-  right: 116px;
-  top: 552px;
   margin: 0;
   font-size: 13px;
-  line-height: 1.42;
+  line-height: 1.46;
   font-weight: 600;
   color: #ef5a8a;
 }
 
 .closingText {
-  position: absolute;
-  left: 78px;
-  right: 104px;
-  top: 571px;
   margin: 0;
+  width: 100%;
   text-align: center;
   font-size: 14px;
   line-height: 1.28;
@@ -448,7 +451,7 @@
 .cupcakeWrap {
   position: absolute;
   right: 28px;
-  bottom: 18px;
+  bottom: 24px;
   width: 48px;
   height: 64px;
 }

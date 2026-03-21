@@ -70,10 +70,14 @@ export function RightPanel({ content }: RightPanelProps) {
       </div>
 
       <p className={styles.lunarText}>{content.lunarDate}</p>
-      <p className={styles.venueText}>{content.venueTitle}</p>
-      <p className={styles.addressLine1}>{content.addressLines[0]}</p>
-      <p className={styles.addressLine2}>{content.addressLines[1]}</p>
-      <p className={styles.closingText}>{content.footerText}</p>
+      <div className={styles.bottomSection}>
+        <p className={styles.venueText}>{content.venueTitle}</p>
+        <div className={styles.addressGroup}>
+          <p className={styles.addressLine1}>{content.addressLines[0]}</p>
+          <p className={styles.addressLine2}>{content.addressLines[1]}</p>
+        </div>
+        <p className={styles.closingText}>{content.footerText}</p>
+      </div>
 
       <div className={styles.cupcakeWrap}>
         <CupcakeIcon />
